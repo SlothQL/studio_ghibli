@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h1>Welcome to Studio Ghibli</h1>
-    <h3>Explore all our movies</h3>
+    <div class="header">
+    <h1>WELCOME TO STUDIO GHIBLI</h1>
+    </div>
     <film-list :films='films'></film-list>
     <film-detail :film="selectedFilm" ></film-detail>
     <characters :characters="foundCharacters"></characters>
@@ -59,5 +60,17 @@ export default {
 </script>
 
 <style>
+  body {
+    background-image: url('./assets/totoro_night.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+  }
 
+  .header {
+    text-align: center;
+    color: white;
+    text-shadow: -1px -1px 0 rgb(8, 48, 75), 1px -1px 0 rgb(8, 48, 75), -1px 1px 0 rgb(8, 48, 75), 1px 1px 0 rgb(8, 48, 75);
+  }
 </style>

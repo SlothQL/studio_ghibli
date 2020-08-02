@@ -3,13 +3,15 @@
     <h1>Welcome to Studio Ghibli</h1>
     <h3>Explore all our movies</h3>
     <film-list :films='films'></film-list>
-    <film-detail :film="selectedFilm"></film-detail>
+    <film-detail :film="selectedFilm" ></film-detail>
+    <characters :characters="foundCharacters"></characters>
   </div>
 </template>
 
 <script>
 import FilmList from './components/FilmList.vue';
 import FilmDetail from './components/FilmDetail.vue';
+import Characters from './components/Characters.vue';
 import { eventBus } from '@/main.js';
 
 export default {
@@ -17,7 +19,9 @@ export default {
   data() {
     return {
       films: [],
-      selectedFilm: null
+      selectedFilm: null,
+      characters: [],
+      foundCharacters: []
     }
   },
   mounted() {
@@ -26,14 +30,30 @@ export default {
     .then(data => this.films = data)
     .catch(err => console.log(err))
 
+    fetch('https://ghibliapi.herokuapp.com/people/')
+    .then(res => res.json())
+    .then(data => this.characters = data)
+    .catch(err => console.log(err))
+
     eventBus.$on('film-selected', (film) =>{
       this.selectedFilm = film;
+      this.findCharacters();
     })
+  },
+
+  methods: {
+    findCharacters() {
+      const filmApi = `https://ghibliapi.herokuapp.com/films/${this.selectedFilm.id}`;
+      console.log('filmApi', filmApi);
+      this.foundCharacters = this.characters.filter(character => character.films[0] === filmApi);
+      return this.foundCharacters;
+    }
   },
 
   components: {
     'film-list': FilmList,
-    'film-detail': FilmDetail
+    'film-detail': FilmDetail,
+    'characters': Characters
   }
 }
 </script>

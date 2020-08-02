@@ -8,6 +8,7 @@
 
 <script>
 import FilmList from './components/FilmList.vue';
+import { eventBus } from '@/main.js';
 
 export default {
   name: 'app',

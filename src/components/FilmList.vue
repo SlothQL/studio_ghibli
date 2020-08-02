@@ -1,8 +1,10 @@
 <template>
   <div class="wrapper">
       <ul class="list">
-          <h2>Explore all our movies</h2>
-          <list-item v-for="film in films" :film="film" :key="film.id" v-bind:value="film"></list-item>
+            <h2>Explore all our movies</h2>
+            <div>
+                <list-item v-for="film in films" :film="film" :key="film.id" v-bind:value="film"></list-item>
+            </div>
       </ul>
   </div>
 </template>

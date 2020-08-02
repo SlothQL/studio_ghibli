@@ -3,10 +3,12 @@
     <div class="header">
       <h1 class="headline">WELCOME TO STUDIO GHIBLI</h1>
     </div>
+      <div class="display">
       <film-list :films='films'></film-list>
       <div class="app-details">
         <film-detail :film="selectedFilm" ></film-detail>
         <characters :characters="foundCharacters"></characters>
+      </div>
       </div>
   </div>
 </template>
@@ -64,25 +66,29 @@ export default {
   body {
     font-family: 'Inter', sans-serif;
     background-color: goldenrod;
-    background-image: url('./assets/banner.jpeg');
+    background-image: url('./assets/totoro.jpeg');
     background-repeat: no-repeat;
-    background-size: 100% 500px;
+    background-size: 100% 400px;
   }
 
   .header {
-    height: 500px;
+    height: 400px;
     text-align: center;
-    
+    margin-top: -15px;
   }
 
   .headline {
     color: goldenrod;
     font-size: 56px;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }
 
   .app-details {
     width: 58%;
     margin-bottom: 30px;
+    margin-top: 50px;
+  }
+
+  .display {
+    margin-top: 50px;
   }
 </style>

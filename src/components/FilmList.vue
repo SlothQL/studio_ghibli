@@ -25,7 +25,6 @@ export default {
         padding: 10px;
         display: flex;
         flex-wrap: wrap;
-        
     }
 
     .item {

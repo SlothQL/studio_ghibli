@@ -1,5 +1,5 @@
 <template>
-  <div v-if="film">
+  <div v-if="film" class="details">
       <h3>{{film.title}}</h3>
       <p>{{film.description}}</p>
       <p>Released {{film.release_date}}</p>
@@ -15,4 +15,7 @@ export default {
 </script>
 
 <style scoped>
+    .details {
+    
+    }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
-      <li v-on:click="handleClick">{{film.title}}</li>
-      <img class="img" :src="require(`../assets/films/${film.title.replace(/\s/g, '-')}.jpg`)" alt="Image of movie"/>
+        <img v-on:click="handleClick" class="img" :src="require(`../assets/films/${film.title.replace(/\s/g, '-')}.jpg`)" alt="Image of movie"/>
+        <li class="title">{{film.title}}</li>
   </div>
 </template>
 
@@ -21,6 +21,12 @@ export default {
 
 <style scoped>
     .img {
-        width: 150px;
+        height: 150px;
+        width: 115px;
+    }
+
+    .title {
+        font-size: 12px;
+        overflow-wrap: break-word;
     }
 </style>

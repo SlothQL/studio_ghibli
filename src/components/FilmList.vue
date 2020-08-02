@@ -1,10 +1,8 @@
 <template>
   <div class="wrapper">
+      <h2>Explore all our movies</h2>
       <ul class="list">
-            <h2>Explore all our movies</h2>
-            <div>
-                <list-item v-for="film in films" :film="film" :key="film.id" v-bind:value="film"></list-item>
-            </div>
+            <list-item class="item" v-for="film in films" :film="film" :key="film.id" v-bind:value="film"></list-item>
       </ul>
   </div>
 </template>
@@ -22,13 +20,17 @@ export default {
 </script>
 
 <style scoped>
-    .wrapper {
-        display: flex;
-    }
     .list {
         list-style: none;
-        background-color: white;
-        padding: 5px;
-        margin: 10px;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+
+    .item {
+        margin-left: 40px;
+        margin-bottom: 30px;
+        width: 115px;
     }
 </style>

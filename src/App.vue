@@ -4,8 +4,10 @@
       <h1 class="banner">WELCOME TO STUDIO GHIBLI</h1>
     </div>
       <film-list :films='films'></film-list>
+      <div class="details">
       <film-detail :film="selectedFilm" ></film-detail>
       <characters :characters="foundCharacters"></characters>
+      </div>
   </div>
 </template>
 

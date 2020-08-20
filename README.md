@@ -30,6 +30,4 @@ Studio Ghibli: https://ghibliapi.herokuapp.com/
 
 ![](images/Studio_ghibli1.png)
 
-
-
-![Studio_ghibli2](images/Studio_ghibli2.png)
+![](images/Studio_ghibli2.png)

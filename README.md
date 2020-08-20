@@ -16,11 +16,9 @@ npm run serve
 - Create an application that makes a request to an API and displays the data.
 - Application should be a multi-component web application created with Vue.
 
-Used API:
+### API
 
 Studio Ghibli: https://ghibliapi.herokuapp.com/
-
-
 
 ### MVP
 
